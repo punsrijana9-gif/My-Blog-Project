@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog Post</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Edit Your Blog Post</h1>
+    </header>
+
+    <main>
+        <form action="/posts/<%= post.id %>" method="POST">
+
+            <input
+                type="text"
+                name="title"
+                value="<%= post.title %>"
+                required
+            >
+
+            <textarea
+                name="content"
+                required
+            ><%= post.content %></textarea>
+
+            <button type="submit">Update Post</button>
+
+        </form>
+
+        <a href="/">Back to Home</a>
+    </main>
+
+</body>
+</html>

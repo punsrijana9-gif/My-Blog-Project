@@ -103,6 +103,11 @@ article a {
     border-radius: 7px;
     margin-top: 10px;
 }
+/* Spacing between Edit and Delete */
+article form {
+    display: inline-block;
+    margin-left: 8px;
+}
 
 article a:hover {
     background-color: #f8c8d8;
@@ -130,6 +135,7 @@ article h3 {
     color: #d6336c;
     margin-top: 0;
     font-size: 22px;
+     overflow-wrap: anywhere;
 }
 
 article p {

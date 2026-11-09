@@ -17,11 +17,12 @@
         <form action="/posts/<%= post.id %>" method="POST">
 
             <input
-                type="text"
-                name="title"
-                value="<%= post.title %>"
-                required
-            >
+              type="text"
+              name="title"
+              value="<%= post.title %>"
+              placeholder="Enter your blog title"
+              required
+>
 
             <textarea
                 name="content"

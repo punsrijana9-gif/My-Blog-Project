@@ -66,9 +66,9 @@ app.post("/posts/:id", (req, res) => {
     const title = req.body.title;
     const content = req.body.content;
 
-    if (!title || !title.trim() || !content || !content.trim()) {
-        return res.status(400).send("Please fill in all fields.");
-    }
+    if (!title?.trim() || !content?.trim()) {
+    return res.status(400).send("Please fill in all fields.");
+}
 
     post.title = title.trim();
     post.content = content.trim();
@@ -90,6 +90,10 @@ app.post("/posts/:id/delete", (req, res) => {
     posts.splice(postIndex, 1);
 
     res.redirect("/");
+});
+// Handle unknown pages
+app.use((req, res) => {
+    res.status(404).send("Page not found!");
 });
 
 // Start server

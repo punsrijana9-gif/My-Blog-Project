@@ -20,7 +20,14 @@ app.get("/", (req, res) => {
 });
 
 // Create a new blog post
-app.post("/posts", (req, res) => {
+app.post("/posts/:id", (req, res) => {
+    const id = Number(req.params.id);
+
+    const post = posts.find(p => p.id === id);
+
+    if (!post) {
+        return res.status(404).send("Post not found!");
+    }
 
     const title = req.body.title;
     const content = req.body.content;

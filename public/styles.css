@@ -171,3 +171,28 @@ article p {
         width: 100%;
     }
 }
+
+/* Edit page card */
+.edit-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(214, 51, 108, 0.08);
+}
+
+/* Back to Home link */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: #fce4ec;
+    color: #c2255c;
+    text-decoration: none;
+    border-radius: 7px;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #f8c8d8;
+}
+

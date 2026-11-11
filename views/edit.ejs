@@ -11,29 +11,37 @@
 
     <header>
         <h1>Edit Your Blog Post</h1>
+        <p>Update your thoughts and stories.</p>
     </header>
 
     <main>
-        <form action="/posts/<%= post.id %>" method="POST">
+        <section class="edit-card">
 
-            <input
-              type="text"
-              name="title"
-              value="<%= post.title %>"
-              placeholder="Enter your blog title"
-              required
->
+            <h2>Update Your Post</h2>
 
-            <textarea
-                name="content"
-                required
-            ><%= post.content %></textarea>
+            <form action="/posts/<%= post.id %>" method="POST">
 
-            <button type="submit">Update Post</button>
+                <input
+                    type="text"
+                    name="title"
+                    value="<%= post.title %>"
+                    placeholder="Enter your blog title"
+                    required
+                >
 
-        </form>
+                <textarea
+                    name="content"
+                    placeholder="Write your blog here..."
+                    required
+                ><%= post.content %></textarea>
 
-        <a href="/">Back to Home</a>
+                <button type="submit">Update Post</button>
+
+            </form>
+
+            <a href="/" class="back-link">← Back to Home</a>
+
+        </section>
     </main>
 
 </body>

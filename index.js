@@ -20,14 +20,7 @@ app.get("/", (req, res) => {
 });
 
 // Create a new blog post
-app.post("/posts/:id", (req, res) => {
-    const id = Number(req.params.id);
-
-    const post = posts.find(p => p.id === id);
-
-    if (!post) {
-        return res.status(404).send("Post not found!");
-    }
+app.post("/posts", (req, res) => {
 
     const title = req.body.title;
     const content = req.body.content;
@@ -61,7 +54,6 @@ app.get("/posts/:id/edit", (req, res) => {
 });
 // Update blog post
 app.post("/posts/:id", (req, res) => {
-
     const id = Number(req.params.id);
 
     const post = posts.find(p => p.id === id);
@@ -73,9 +65,10 @@ app.post("/posts/:id", (req, res) => {
     const title = req.body.title;
     const content = req.body.content;
 
-    if (!title?.trim() || !content?.trim()) {
-    return res.status(400).send("Please fill in all fields.");
-}
+    // Check whether fields are empty
+    if (!title || !title.trim() || !content || !content.trim()) {
+        return res.status(400).send("Please fill in all fields.");
+    }
 
     post.title = title.trim();
     post.content = content.trim();
